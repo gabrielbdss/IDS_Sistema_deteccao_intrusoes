@@ -43,7 +43,7 @@ class IDSWorker(QThread):
             self.packet_count[src_ip] += 1
             self.packet_per_second += 1
 
-            # Detectar ataques baseados em threshold
+            # Detectar ataques 
             if self.packet_count[src_ip] > self.attack_threshold:
                 self.attack_detected.emit(f"ALERTA: Possível ataque de {src_ip}")
 
